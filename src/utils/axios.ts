@@ -17,6 +17,9 @@ instance.interceptors.request.use(function (config) {
 instance.interceptors.response.use(
   function (response) {
     // 相应数据处理
+    if (response.status === 200) {
+      return response.data
+    }
     return response;
   },
   function(error) {

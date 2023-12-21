@@ -9,6 +9,17 @@ const routes = [
   {
     path: '/reg',
     component: () => import('@/views/login/reg.vue')
+  },
+  {
+    path: '/home',
+    component: () => import('@/layout/default.vue'),
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index.vue'),
+      }
+    ]
+
   }
 ] as RouteRecordRaw[]
 const router = createRouter({
