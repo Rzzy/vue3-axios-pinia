@@ -13,10 +13,27 @@ const routes = [
   {
     path: '/home',
     component: () => import('@/layout/default.vue'),
+    redirect: '/home/dashboard',
     children: [
       {
+        name: 'dashboard',
         path: 'dashboard',
         component: () => import('@/views/dashboard/index.vue'),
+      },
+      {
+        name: 'user-manage',
+        path: 'user-manage',
+        component: () => import('@/views/users/index.vue'),
+      },
+      {
+        name: 'role-manage',
+        path: 'role-manage',
+        component: () => import('@/views/roles/index.vue'),
+      },
+      {
+        name: 'menu-manage',
+        path: 'menu-manage',
+        component: () => import('@/views/menus/index.vue'),
       }
     ]
 
